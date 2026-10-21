@@ -1,8 +1,8 @@
 <?php
-    $host     = "127.0.0.1";
+    $host     = "";
     $user     = "root";
-    $password = "235563A";
-    $dbname   = "curriculo";
+    $password = "SUA SENHA";
+    $dbname   = "SEU DB DE CURRICULO";
 
     // CONEXAO
     @$con = mysqli_connect($host, $user, $password, $dbname);

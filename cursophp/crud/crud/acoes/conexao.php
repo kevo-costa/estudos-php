@@ -1,9 +1,9 @@
 <?php
 
-    $host     = "127.0.0.1";
+    $host     = "";
     $user     = "root";
-    $password = "235563A";
-    $dbname   = "projeto01";
+    $password = "SUA SENHA";
+    $dbname   = "SEU DB";
 
     // CONEXAO
     @$con = mysqli_connect($host, $user, $password, $dbname);
