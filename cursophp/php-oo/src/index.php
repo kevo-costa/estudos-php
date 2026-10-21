@@ -1,10 +1,13 @@
 <?php 
     //A ORIENTACAO A OBJETOS TEM COMO OBJETIVO ABSTRAIR ALGO DA VIDA REAL E TRANSFORMAR EM UM OBJETO VIRTUAL
     require_once 'Pessoa.php';
+    require_once 'Endereco.php';
+    //CRIAR ENDERECO
+    $endereco1 = new Endereco("SE", "Dores", "Rua B", 67, "Joao Ventura", 49600000);
     //INSTANCIAR OU CRIAR OBJETO DO TIPO PESSOA
-    $pessoa1 = new Pessoa("Kevin Costa", 21); 
-    $pessoa2 = new Pessoa("Beatriz Iasmyn", 19);
-    $pessoa3 = new Pessoa("Guilherme Silva", 20);
+    $pessoa1 = new Pessoa("Kevin Costa", 21, $endereco1); 
+    $pessoa2 = new Pessoa("Beatriz Iasmyn", 19, $endereco1);
+    $pessoa3 = new Pessoa("Guilherme Silva", 20, $endereco1);
     //TIRANDO A REFERENCIA A PESSOA 3
     unset($pessoa3); 
     //
