@@ -8,7 +8,7 @@
         private string $bairro;
         private string $cep;
         //FUNCAO CONSTRUTORA
-        public function __construct(string $uf, string $cidade, string $nomeLogradouro, int $numero, string $bairro, int $cep)
+        public function __construct(string $uf, string $cidade, string $nomeLogradouro, int $numero, string $bairro, string $cep)
         {
             $this -> uf = $uf;
             $this -> cidade = $cidade;
@@ -58,7 +58,7 @@
             $this->bairro = $bairro;
         }
         //
-        public function getCep(): int{
+        public function getCep(): string{
             return $this -> cep;
         }
         //
