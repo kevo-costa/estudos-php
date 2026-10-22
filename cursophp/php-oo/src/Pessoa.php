@@ -2,11 +2,13 @@
     //CLASSES SAO FORMADAS POR ATRIBUTOS E COMPORTAMENTOS
     //ATRIBUTOS(CARACTERISTICAS) = VARIAVEIS
     //COMPORTAMENTOS = FUNCOES
-    class Pessoa 
+    //CLASSE GENERICA
+    abstract class Pessoa 
     {
         //ATRIBUTOS
         private string $nome;
         private int $idade;
+        protected float $desconto;
         //ASSOCIACAO ENTRE PESSOA E ENDERECO
         private Endereco $endereco;
         //
@@ -20,6 +22,8 @@
             $this->idade = $idade; 
             $this->endereco = $endereco;
             $this->validaIdade($idade);
+            //DEFININDO O DESCONTO
+            $this->setDesconto();
             self :: $numDePessoas++;
         }
         //METODO DESTRUTOR
@@ -63,6 +67,12 @@
                 echo "Idade nao permitida!";
                 exit;
             }
+        }
+        //
+        protected abstract function setDisconto(): void;
+        //
+        public function getDesconto(): float{
+            return $this -> desconto;
         }
     }
 ?>

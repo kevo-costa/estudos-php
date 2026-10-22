@@ -26,5 +26,9 @@
         public function setSalario(float $salario): void{
             $this->salario = $salario; 
         }
+        //
+        public function setDesconto(): void{
+            $this -> desconto = 0.10;
+        }
     }
 ?>

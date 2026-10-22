@@ -26,5 +26,9 @@
         public function setRenda(float $renda): void{
             $this->renda = $renda;
         }
+        //
+        public function setDesconto(): void{
+            $this -> desconto = 0.05;
+        }
     }
 ?>
