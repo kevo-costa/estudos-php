@@ -69,7 +69,7 @@
             }
         }
         //
-        protected abstract function setDisconto(): void;
+        protected abstract function setDesconto(): void;
         //
         public function getDesconto(): float{
             return $this -> desconto;
