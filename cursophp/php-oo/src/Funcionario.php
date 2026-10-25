@@ -30,5 +30,17 @@
         public function setDesconto(): void{
             $this -> desconto = 0.10;
         }
+        //SOBRESCREVER METODO 
+        #[Override]
+        public function __toString(): string
+        {
+            return "<p>Nome: ". $this->nome .
+            "<br>Idade: ". $this->idade . " anos".
+            "<br>End. :" . $this->endereco->getNomeLogradouro() . ", " .
+            $this->endereco->getNumero() . " - " . $this->endereco->getBairro() .
+            "<br>Cargo: " . $this -> cargo . 
+            "<br>Salario R$: " . $this -> salario .
+            "</p>";
+        }
     }
 ?>

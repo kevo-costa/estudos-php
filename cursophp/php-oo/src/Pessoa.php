@@ -6,11 +6,11 @@
     abstract class Pessoa 
     {
         //ATRIBUTOS
-        private string $nome;
-        private int $idade;
+        protected string $nome;
+        protected int $idade;
         protected float $desconto;
         //ASSOCIACAO ENTRE PESSOA E ENDERECO
-        private Endereco $endereco;
+        protected Endereco $endereco;
         //
         private static int $numDePessoas = 0;
         //
@@ -74,5 +74,7 @@
         public function getDesconto(): float{
             return $this -> desconto;
         }
+        //
+        public abstract function __toString(): string;
     }
 ?>

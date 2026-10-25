@@ -18,13 +18,19 @@
     //
     $funcionario1 = new Funcionario("Kevin Costa", 21, $endereco1, "Desenvolvedor back-end", 1800);
     echo "<pre>";
-    var_dump($funcionario1);
+        var_dump($funcionario1);
     echo "</pre>";
-    
+    //
+    echo $funcionario1->__toString();
+    echo "<hr>";
+    //
     $cliente1 = new Cliente("Beatriz Iasmyn", 19, $endereco1, "22/12/2007", 1800);
     echo "<pre>";
-    var_dump($cliente1);
+        var_dump($cliente1);
     echo "</pre>";
+    //
+    echo $cliente1->__toString();
+    echo "<hr>";
     //
     echo "<p>Numero de Pessoas:" . Pessoa::getNumDePessoas() . "</p>";
     //SETANDO VALORES PARA ATRIBUTOS DE OBJETOS
@@ -57,6 +63,25 @@
     echo "<p>Nome: {$pessoa2->getNome()}</p>";
     echo "<p>Idade: {$pessoa2->getIdade()} anos.</p>";
     //
+    echo "<pre>";
+        var_dump($pessoa1);
+        var_dump($pessoa2);
+    echo "</pre>";
+    */
+    //
+    /*
+    $pessoa1->setNome("Kevin Costa dos Santos");
+    $pessoa1->setIdadae(21);
+    //
+    $pessoa2->setNome("Beatriz Iasmyn Azevedo de Oliveira");
+    $pessoa2->setIdade(19);
+    //
+    echo "<p>Nome: {$pessoa1->getNome()}.</p>";
+    echo "<p>Idade: {$pessoa1->getIdade()} anos.</p>";
+    //
+    echo "<p>Nome: {$pessoa2->getNome()}.</p>";
+    echo "<p>Idade: {$pessoa2->getIdade()} anos.</p>";
+    // 
     echo "<pre>";
         var_dump($pessoa1);
         var_dump($pessoa2);

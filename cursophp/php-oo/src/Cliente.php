@@ -30,5 +30,16 @@
         public function setDesconto(): void{
             $this -> desconto = 0.05;
         }
+        //
+        public function __toString(): string
+        {
+            return "<p>Nome: ". $this->nome .
+            "<br>Idade: ". $this->idade . " anos".
+            "<br>End. :" . $this->endereco->getNomeLogradouro() . ", " .
+            $this->endereco->getNumero() . " - " . $this->endereco->getBairro() .
+            "<br>Data Nasc: " . $this -> dataDeNascimento . 
+            "<br>Renda R$: " . $this -> renda .
+            "</p>";
+        }
     }
 ?>
