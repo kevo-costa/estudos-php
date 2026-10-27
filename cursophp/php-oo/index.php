@@ -33,6 +33,19 @@
     echo "<hr>";
     //
     echo "<p>Numero de Pessoas:" . Pessoa::getNumDePessoas() . "</p>";
+    //
+    $funcionario1->setSenha("123");
+    //
+    $funcionario1->login("Kevin Costa", "123");
+    //USANDO TRAIT
+    echo $endereco1->bairro;
+    echo"<br>";
+    echo $endereco1->nomeLogradouro;
+    echo "<br>";
+    echo $cliente1->nome;
+    echo "<br>";
+    echo $funcionario1->nome;
+
     //SETANDO VALORES PARA ATRIBUTOS DE OBJETOS
     /*
     $pessoa1->nome = "Kevin Costa";

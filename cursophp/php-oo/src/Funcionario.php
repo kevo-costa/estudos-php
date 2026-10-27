@@ -1,8 +1,10 @@
 <?php
-    class Funcionario extends Pessoa
+    require_once "Autenticar.php";
+    class Funcionario extends Pessoa implements Autenticar
     {
         private string $cargo;
         private float $salario;
+        private string $senha;
         //
         public function __construct(string $nome, int $idade, Endereco $endereco,string $cargo, float $salario)
         {
@@ -41,6 +43,20 @@
             "<br>Cargo: " . $this -> cargo . 
             "<br>Salario R$: " . $this -> salario .
             "</p>";
+        }
+        //
+        #[Override]
+        public function login($nome, string $senha): void
+        {
+            if ($this->nome === $nome && $this->senha === $senha){
+                echo "<p>[ LOGIN: Usuario " . $this->nome . " autenticado com sucesso! ]</p>";
+            } else {
+                echo "<p>[ ERRO! Usuario ou senha incorreta! ]</p>";
+            }
+        }
+        //
+        public function setSenha(string $senha): void{
+            $this->senha = $senha;
         }
     }
 ?>

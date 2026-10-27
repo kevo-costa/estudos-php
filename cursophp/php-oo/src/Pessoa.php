@@ -3,8 +3,10 @@
     //ATRIBUTOS(CARACTERISTICAS) = VARIAVEIS
     //COMPORTAMENTOS = FUNCOES
     //CLASSE GENERICA
+    require_once 'AcessoAtributos.php';
     abstract class Pessoa 
     {
+        use AcessoAtributos;
         //ATRIBUTOS
         protected string $nome;
         protected int $idade;
