@@ -1,9 +1,10 @@
 <?php 
+    namespace Costa\Comercial\Modelo;
     //CLASSES SAO FORMADAS POR ATRIBUTOS E COMPORTAMENTOS
     //ATRIBUTOS(CARACTERISTICAS) = VARIAVEIS
     //COMPORTAMENTOS = FUNCOES
     //CLASSE GENERICA
-    require_once 'AcessoAtributos.php';
+    require_once 'autoload.php';
     abstract class Pessoa 
     {
         use AcessoAtributos;

@@ -1,9 +1,10 @@
 <?php 
     //A ORIENTACAO A OBJETOS TEM COMO OBJETIVO ABSTRAIR ALGO DA VIDA REAL E TRANSFORMAR EM UM OBJETO VIRTUAL
-    require_once 'src/Pessoa.php';
-    require_once 'src/Endereco.php';
-    require_once 'src/Funcionario.php';
-    require_once 'src/Cliente.php';
+    require_once 'autoload.php';
+    use Costa\Comercial\Modelo\Pessoa;
+    use Costa\Comercial\Modelo\Endereco;
+    use Costa\Comercial\Modelo\Funcionario;
+    use Costa\Comercial\Modelo\Cliente;
     //CRIAR ENDERECO
     $endereco1 = new Endereco("SE", "Dores", "Rua B", 67, "Joao Ventura", 49600000);
     //INSTANCIAR OU CRIAR OBJETO DO TIPO PESSOA

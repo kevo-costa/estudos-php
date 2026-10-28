@@ -1,4 +1,5 @@
 <?php 
+    namespace Costa\Comercial\Modelo;
     class Cliente extends Pessoa
     {
         private string $dataDeNascimento;

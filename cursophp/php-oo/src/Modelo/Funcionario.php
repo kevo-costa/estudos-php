@@ -1,5 +1,6 @@
 <?php
-    require_once "Autenticar.php";
+    namespace Costa\Comercial\Modelo;
+    require_once 'autoload.php';
     class Funcionario extends Pessoa implements Autenticar
     {
         private string $cargo;

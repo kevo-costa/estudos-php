@@ -1,5 +1,6 @@
 <?php 
-    require_once 'AcessoAtributos.php';
+    namespace Costa\Comercial\Modelo;
+    require_once 'autoload.php';
     class Endereco
     {
         use AcessoAtributos;
