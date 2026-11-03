@@ -1,6 +1,7 @@
 <?php
     namespace Costa\Comercial\Modelo;
     require_once 'autoload.php';
+    use Override;
     class Funcionario extends Pessoa implements Autenticar
     {
         private string $cargo;
