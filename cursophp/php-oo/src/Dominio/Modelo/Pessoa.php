@@ -1,5 +1,8 @@
 <?php 
-    namespace Costa\Comercial\Modelo;
+    namespace Costa\Comercial\Dominio\Modelo;
+
+    use DateTimeInterface;
+
     //CLASSES SAO FORMADAS POR ATRIBUTOS E COMPORTAMENTOS
     //ATRIBUTOS(CARACTERISTICAS) = VARIAVEIS
     //COMPORTAMENTOS = FUNCOES
@@ -9,8 +12,9 @@
     {
         use AcessoAtributos;
         //ATRIBUTOS
+        protected ?int $id;
         protected string $nome;
-        protected int $idade;
+        protected DateTimeInterface $dataNascimento;
         protected float $desconto;
         //ASSOCIACAO ENTRE PESSOA E ENDERECO
         protected Endereco $endereco;
@@ -19,12 +23,13 @@
         //
         //COMPORTAMENTOS
         //METODO CONSTRUTOR
-        public function __construct(string $nome, int $idade, Endereco $endereco)
+        public function __construct(?int $id,string $nome, DateTimeInterface $dataNascimento, Endereco $endereco)
         {
+            $this->id=$id;
             $this->nome = $nome;
-            $this->idade = $idade; 
+            $this->dataNascimento = $dataNascimento; 
             $this->endereco = $endereco;
-            $this->validaIdade($idade);
+            //$this->validaIdade($idade);
             //DEFININDO O DESCONTO
             $this->setDesconto();
             self :: $numDePessoas++;
@@ -42,9 +47,9 @@
             return $this->nome; //FUNCAO GETNOME RETORNA O NOME
         }
         //
-        public function getIdade(): int
+        public function getDataNascimento(): DateTimeInterface
         {
-            return $this->idade; //FUNCAO GETIDADE RETORNA A IDADE
+            return $this->dataNascimento; //FUNCAO GETIDADE RETORNA A IDADE
         }
         //
         //METODO SET
@@ -53,9 +58,9 @@
             $this->nome = $nome; //FUNCAO SETNOME DEFINE O NOME
         }
         //
-        public function setIdade(int $idade): void
+        public function setDataNascimento(DateTimeInterface $dataNascimento): void
         {
-            $this->idade = $idade; //FUNCAO SETIDADE DEFINE A IDADE
+            $this->dataNascimento = $dataNascimento; //FUNCAO SETIDADE DEFINE A IDADE
         }
         //
         public static function getNumDePessoas(): int{
@@ -63,6 +68,7 @@
         }
         //
         //METODO ESPECIFICO
+        /*
         public function validaIdade(int $idade): void{
             if ($this -> idade > 0 AND $this -> idade < 120){
                 $this -> idade = $idade;
@@ -71,6 +77,7 @@
                 exit;
             }
         }
+        */
         //
         protected abstract function setDesconto(): void;
         //
@@ -79,5 +86,11 @@
         }
         //
         public abstract function __toString(): string;
+        //
+        public function idade(): int{
+            return $this->getDataNascimento()
+            ->diff(new \DateTimeImmutable())
+            ->y;
+        }
     }
 ?>

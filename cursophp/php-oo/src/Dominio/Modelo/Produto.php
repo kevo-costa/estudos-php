@@ -1,5 +1,5 @@
 <?php 
-    namespace Costa\Comercial\Modelo;
+    namespace Costa\Comercial\Dominio\Modelo;
     //
     class Produto
     {

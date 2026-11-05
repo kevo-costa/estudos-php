@@ -1,7 +1,7 @@
 <?php 
     namespace Costa\Comercial\Infraestrutura\Repositorio;
     //
-    use Costa\Comercial\Modelo\Produto;
+    use Costa\Comercial\Dominio\Modelo\Produto;
     use Costa\Comercial\Dominio\Repositorio\RepositorioProdutos;
     use Costa\Comercial\Costa\Comercial\Infraestrutura\Persistencia;
     use Override;

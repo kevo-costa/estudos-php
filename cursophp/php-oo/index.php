@@ -4,7 +4,12 @@ require_once 'autoload.php';
 //
 use Costa\Comercial\Infraestrutura\Persistencia\CriadorConexao;
 use Costa\Comercial\Infraestrutura\Repositorio\PDORepositorioProduto;
-use Costa\Comercial\Modelo\Produto;
+use Costa\Comercial\Dominio\Modelo\Produto;
+//
+use Costa\Comercial\Dominio\Modelo\Cliente;
+use Costa\Comercial\Dominio\Modelo\Funcionario;
+use Costa\Comercial\Dominio\Modelo\Pessoa;
+use Costa\Comercial\Dominio\Modelo\Endereco;
 //
 echo"<pre>";
     $repositorio = new PDORepositorioProduto(CriadorConexao::criarConexao());

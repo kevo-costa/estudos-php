@@ -1,12 +1,19 @@
 <?php 
     //A ORIENTACAO A OBJETOS TEM COMO OBJETIVO ABSTRAIR ALGO DA VIDA REAL E TRANSFORMAR EM UM OBJETO VIRTUAL
     require_once 'autoload.php';
-    use Costa\Comercial\Modelo\Pessoa;
-    use Costa\Comercial\Modelo\Endereco;
-    use Costa\Comercial\Modelo\Funcionario;
-    use Costa\Comercial\Modelo\Cliente;
+    use Costa\Comercial\Dominio\Modelo\Pessoa;
+    use Costa\Comercial\Dominio\Modelo\Endereco;
+    use Costa\Comercial\Dominio\Modelo\Funcionario;
+    use Costa\Comercial\Dominio\Modelo\Cliente;
     //CRIAR ENDERECO
-    $endereco1 = new Endereco("SE", "Dores", "Rua B", 67, "Joao Ventura", 49600000);
+    $endereco1 = new Endereco(
+        "SE","Dores",
+        "Rua B", 67,
+        "Joao Ventura", 49600000);
+    $endereco2 = new Endereco(
+        "SE", "Itabaiana",
+        "Rua B", 42,
+        "Universitario", 49500001);
     //INSTANCIAR OU CRIAR OBJETO DO TIPO PESSOA
     /*
     $pessoa1 = new Pessoa("Kevin Costa", 21, $endereco1); 
@@ -17,16 +24,33 @@
     //unset($pessoa3); 
     //
     //
-    $funcionario1 = new Funcionario("Kevin Costa", 21, $endereco1, "Desenvolvedor back-end", 1800);
+    $funcionario1 = new Funcionario(
+        NULL,
+        "Kevin Costa", 
+        new DateTimeImmutable("2005-04-11") ,
+        $endereco1,
+        "Desenvolvedor back-end",
+         1800);
     echo "<pre>";
+        echo $funcionario1;
+       // echo"<br>";
+        //echo $funcionario1->getDataNascimento()->format('d/m/Y');
+        echo"<br>";
         var_dump($funcionario1);
     echo "</pre>";
     //
     echo $funcionario1->__toString();
     echo "<hr>";
     //
-    $cliente1 = new Cliente("Beatriz Iasmyn", 19, $endereco1, "22/12/2007", 1800);
+    $cliente1 = new Cliente(
+        NULL,
+        "Beatriz Iasmyn",
+        new DateTimeImmutable("2007-12-22") ,
+        $endereco2,
+        1800);
     echo "<pre>";
+        echo $cliente1;
+        echo"<br>";
         var_dump($cliente1);
     echo "</pre>";
     //

@@ -1,16 +1,18 @@
 <?php
-    namespace Costa\Comercial\Modelo;
+    namespace Costa\Comercial\Dominio\Modelo;
     require_once 'autoload.php';
-    use Override;
+
+use DateTimeInterface;
+use Override;
     class Funcionario extends Pessoa implements Autenticar
     {
         private string $cargo;
         private float $salario;
         private string $senha;
         //
-        public function __construct(string $nome, int $idade, Endereco $endereco,string $cargo, float $salario)
+        public function __construct(?int $id,string $nome, DateTimeInterface $dataNascimento, Endereco $endereco,string $cargo, float $salario)
         {
-            parent::__construct($nome, $idade, $endereco);
+            parent::__construct($id, $nome, $dataNascimento, $endereco);
             $this->cargo = $cargo;
             $this->salario = $salario;
         }
@@ -39,7 +41,8 @@
         public function __toString(): string
         {
             return "<p>Nome: ". $this->nome .
-            "<br>Idade: ". $this->idade . " anos".
+            "<br>Idade: ". $this->idade() . " anos".
+            "<br>Nasc.:" . $this->getDataNascimento()->format('d/m/Y') .
             "<br>End. :" . $this->endereco->getNomeLogradouro() . ", " .
             $this->endereco->getNumero() . " - " . $this->endereco->getBairro() .
             "<br>Cargo: " . $this -> cargo . 

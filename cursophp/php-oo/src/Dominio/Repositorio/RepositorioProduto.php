@@ -1,7 +1,7 @@
 <?php
 namespace Costa\Comercial\Dominio\Repositorio ;
 //
-use Costa\Comercial\Modelo\Produto ;
+use Costa\Comercial\Dominio\Modelo\Produto ;
 //
 interface RepositorioProdutos
 {

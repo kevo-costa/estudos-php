@@ -1,5 +1,5 @@
 <?php 
-    namespace Costa\Comercial\Modelo;
+    namespace Costa\Comercial\Dominio\Modelo;
     trait AcessoAtributos
     {
         public function __get(string $nomeAtributo){
