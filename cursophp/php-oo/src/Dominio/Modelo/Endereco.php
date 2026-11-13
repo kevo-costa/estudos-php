@@ -4,21 +4,25 @@
     class Endereco
     {
         use AcessoAtributos;
+        private ?int $idendereco;
         private string $uf;
         private string $cidade;
         private string $nomeLogradouro;
         private string $numero;
         private string $bairro;
         private string $cep;
+        private ?int $idcliente;
         //FUNCAO CONSTRUTORA
-        public function __construct(string $uf, string $cidade, string $nomeLogradouro, int $numero, string $bairro, string $cep)
+        public function __construct(?int $idendereco, string $uf, string $cidade, string $nomeLogradouro, string $numero, string $bairro, string $cep, ?int $idcliente)
         {
+            $this -> idendereco=$idendereco;
             $this -> uf = $uf;
             $this -> cidade = $cidade;
             $this -> nomeLogradouro = $nomeLogradouro;
             $this -> numero = $numero;
             $this -> bairro = $bairro;
             $this -> cep = $cep;
+            $this -> idcliente=$idcliente;
         }
         //
         public function getUf(): string{
@@ -45,11 +49,11 @@
             $this->nomeLogradouro = $nomeLogradouro;
         }
         //
-        public function getNumero(): int{
+        public function getNumero(): string{
             return $this -> numero;
         }
         //
-        public function setNumero(int $numero): void{
+        public function setNumero(string $numero): void{
             $this->numero = $numero;
         }
         //
@@ -65,7 +69,7 @@
             return $this -> cep;
         }
         //
-        public function setCep(int $cep): void{
+        public function setCep(string $cep): void{
             $this->cep = $cep;
         }
     }

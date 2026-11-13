@@ -1,19 +1,26 @@
 <?php 
+    //CLIENTES
     //A ORIENTACAO A OBJETOS TEM COMO OBJETIVO ABSTRAIR ALGO DA VIDA REAL E TRANSFORMAR EM UM OBJETO VIRTUAL
     require_once 'autoload.php';
     use Costa\Comercial\Dominio\Modelo\Pessoa;
     use Costa\Comercial\Dominio\Modelo\Endereco;
     use Costa\Comercial\Dominio\Modelo\Funcionario;
     use Costa\Comercial\Dominio\Modelo\Cliente;
+    use Costa\Comercial\Infraestrutura\Repositorio\PDORepositorioCliente;
+    use Costa\Comercial\Infraestrutura\Persistencia\CriadorConexao;
     //CRIAR ENDERECO
     $endereco1 = new Endereco(
+        NULL,
         "SE","Dores",
         "Rua B", 67,
-        "Joao Ventura", 49600000);
+        "Joao Ventura", 49600000,
+        NULL);
     $endereco2 = new Endereco(
+        NULL,
         "SE", "Itabaiana",
         "Rua B", 42,
-        "Universitario", 49500001);
+        "Universitario", 49500001,
+        NULL);
     //INSTANCIAR OU CRIAR OBJETO DO TIPO PESSOA
     /*
     $pessoa1 = new Pessoa("Kevin Costa", 21, $endereco1); 
@@ -70,7 +77,21 @@
     echo $cliente1->nome;
     echo "<br>";
     echo $funcionario1->nome;
-
+    //
+    $respositorioClientes = new PDORepositorioCliente(CriadorConexao::criarConexao());
+    //CLIENTE GENERICO PARA USAR METODOS ATRAVES DO ID
+    //$cliente = new Cliente (XXX,"kevin costner", new DateTimeImmutable("2000-20-10"), $endereco1, 1111.00);
+    //
+    //SALVAR CLIENTE NO BD
+    //$respositorioClientes->salvar($cliente1);
+    //DELETAR CLIENTE DO BD
+    //$respositorioClientes->delete($cliente1);
+    //UPDATE CLIENTE NO BD
+    //$respositorioClientes->updateCliente($cliente1);
+    //
+    $resultado = $respositorioClientes->todosClientesComEndereco();
+    //ESCREVER
+    foreach($resultado as $client){ echo $client; }
     //SETANDO VALORES PARA ATRIBUTOS DE OBJETOS
     /*
     $pessoa1->nome = "Kevin Costa";

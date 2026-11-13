@@ -92,5 +92,13 @@
             ->diff(new \DateTimeImmutable())
             ->y;
         }
+        //
+        public function getEndereco() : Endereco{
+            return $this->endereco;
+        }
+        //
+        public function setEndereco(Endereco $endereco): void{
+            $this->endereco = $endereco;
+        }
     }
 ?>

@@ -1,4 +1,5 @@
 <?php 
+//PRODUTOS
 //
 require_once 'autoload.php';
 //
@@ -53,6 +54,5 @@ echo"<pre>";
     //$repositorio->readProduto($produto0);
     //
     //EXIBIR TODOS PRODUTOS
-    $repositorio->todosProdutos();
 echo"</pre>";
 ?>
