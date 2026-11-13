@@ -10,7 +10,7 @@
         public static function criarConexao()
         {
             try {
-                $pdo = new PDO('mysql:host=127.0.0.1;dbname=bd_comercial', 'root', 'SUA SENHA');
+                $pdo = new PDO('mysql:host=SEU HOST;dbname=SEU DB', 'root', 'SUA SENHA');
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $pdo;
                 } catch(PDOException $excecao) {
