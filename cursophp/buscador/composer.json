@@ -1,0 +1,20 @@
+{
+    "name": "kevincosta/buscador-de-cursos",
+    "description": "Pacote buscador de cursos",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Kevincosta\\BuscadorDeCursos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kevin Costa dos Santos"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^8.5",
+        "symfony/dom-crawler": "^5.3",
+        "symfony/css-selector": "^7.4"
+    }
+}
